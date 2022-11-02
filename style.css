@@ -104,3 +104,10 @@ body {
     cursor: pointer;
     margin-left: 40px;
 }
+
+
+.checkbox input[type='checkbox']:checked {
+    cursor: pointer;
+    margin-left: 40px;
+    accent-color: #444241;
+}

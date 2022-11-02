@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do's</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
 </head>
-<link rel="stylesheet" href="style.css">
-
 <body>
     <div class="nav">
         <div class="name">
@@ -22,41 +21,17 @@
     <div class="align">
         <div class="search">
             <input type="text" id="task" placeholder="Add A Task..." class="search">
-            <button class="add_btn">Add</button>
+            <button class="add_btn" onclick="newElement()">Add</button>
         </div>
     </div>
     <div class="align">
-        <div class="cards align">
+        <div class="cards align" id="card" onclick="">
             <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, natus.
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, natus.</p>
 
             </div>
             <div class="checkbox">
-                <input type="checkbox" name="completed" id="conpleted">
-            </div>
-        </div>
-    </div>
-    <div class="align">
-        <div class="cards align">
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, natus.
-
-            </div>
-            <div class="checkbox">
-                <input type="checkbox" name="completed" id="conpleted">
-            </div>
-        </div>
-    </div>
-    <div class="align">
-        <div class="cards align">
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, natus.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga quidem eos molestiae neque vitae accusantium possimus odio tenetur tempore?
-
-
-            </div>
-            <div class="checkbox">
-                <input type="checkbox" name="completed" id="conpleted">
+                <input type="checkbox" name="completed" id="completed" />
             </div>
         </div>
     </div>
