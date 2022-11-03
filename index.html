@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do's</title>
+    <title>JS-Task</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
 <body>
-    <div class="nav">
-        <div class="name">
-            JS-Task
+    
+    <header>
+        <div id="nav" >
+            <h1 id="name">JS-Task</h1>
         </div>
-        <div class="icon align">
-            <a href="#" id="profile_trigger"><img src="pfp.png" alt="Ok"></a>
-        </div>
-    </div>
-    <div class="align">
-        <div class="search">
-            <input type="text" id="task" placeholder="Add A Task..." class="search">
-            <button class="add_btn" onclick="newElement()">Add</button>
-        </div>
-    </div>
-    <div class="align">
-        <div class="cards align" id="card" onclick="">
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, natus.</p>
+        <form id="task-form">
 
+            <input
+                type="text"
+                name="task-input"
+                id="task-input"
+                placeholder="Add a Task..."
+            />
+            <input 
+                type="submit"
+                id="task-submit"
+                value="+"
+            />
+        </form>
+    </header>
+
+    <main>
+        <section>
+            <div id="tasks">
+                <!-- <div class="task">
+                        <div class="content">
+                            <input 
+                                type="text" 
+                                class="text" 
+                                value="A new task"
+                                readonly>
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+				</div> -->
+                <p></p>
             </div>
-            <div class="checkbox">
-                <input type="checkbox" name="completed" id="completed" />
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
+    
 </body>
-
 </html>
