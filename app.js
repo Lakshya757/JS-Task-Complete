@@ -1,59 +1,62 @@
-window.addEventListener('load',()=>{//start when the page loads
-    const form = document.querySelector('#task-form')
-    const input = document.querySelector('#task-input')
-    const list = document.querySelector('#tasks')
+window.addEventListener('load', () => {
+	const form = document.querySelector("#new-task-form");
+	const input = document.querySelector("#new-task-input");
+	const list_el = document.querySelector("#tasks");
 
-    form.addEventListener('submit',(e)=>{
-        e.preventDefault();
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
 
-        const task = input.value//get value of add input
-        
-        const task_element = document.createElement('div') //create a task card element
-        task_element.classList.add('task')//give each task card element a class called 'task'
+		const task = input.value;
 
-        const task_content_element = document.createElement('div')//create a subclass for the element- taskcard which holds all the content within the card
-        task_content_element.classList.add('content')//give the subclass a class
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
 
-        task_element.appendChild(task_content_element)//puts the subclass- inside the card class
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
 
-        const task_text_element = document.createElement('p')//create a text (<p>) element which holds the input text(task)
-        task_text_element.classList.add('text')//give the text element a class called 'text'
-        // task_text_element.innerText = "task"//puts the input text(task) inside the text element(p)
-        document.querySelector("p").innerText = task
+		task_el.appendChild(task_content_el);
 
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
 
+		task_content_el.appendChild(task_input_el);
 
-        task_content_element.appendChild(task_text_element)//puts the text element(p) inside the content div/class
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+		
+		const task_edit_el = document.createElement('button');
+		task_edit_el.classList.add('edit');
+		task_edit_el.innerText = 'Edit';
 
-        const task_action_element = document.createElement('div')//create a element 'action' which holds all the actions (check & delete)
-        task_action_element.classList.add('actions')//give the action element a class called 'actions'
-        
-        const task_checked_element = document.createElement('button')//create a button element which is used to check/complete the task
-        task_checked_element.classList.add('check')//gives the button element a class called 'check'
-        task_checked_element.innerText = 'check'//give the button a text/icon
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
 
-        const task_delete_element = document.createElement('button')//create a button element which is used to delete a task
-        task_delete_element.classList.add('delete')//gives the button element a class called 'delete'
-        task_element.innerText = 'Delete'//give the button a text/icon
+		task_actions_el.appendChild(task_edit_el);
+		task_actions_el.appendChild(task_delete_el);
 
-        task_action_element.appendChild(task_checked_element)
-        task_action_element.appendChild(task_delete_element)
+		task_el.appendChild(task_actions_el);
 
-        task_element.appendChild(task_action_element)
-        list.appendChild(task_element)
+		list_el.appendChild(task_el);
 
-        input.value = '';
+		input.value = '';
 
+		task_edit_el.addEventListener('click', (e) => {
+			if (task_edit_el.innerText.toLowerCase() == "edit") {
+				task_edit_el.innerText = "Save";
+				task_input_el.removeAttribute("readonly");
+				task_input_el.focus();
+			} else {
+				task_edit_el.innerText = "Edit";
+				task_input_el.setAttribute("readonly", "readonly");
+			}
+		});
 
-        task_checked_element.addEventListener('click', (e)=>{
-            if(task_checked_element.innerText.toLowerCase() == 'check'){
-                document.querySelector("p").style["textDecoration"] = 'line-through'
-            }
-        })
-
-        task_delete_element.addEventListener('click', (e)=>{
-            list.removeChild(task_element)
-        })
-
-    })
-})
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
+});
