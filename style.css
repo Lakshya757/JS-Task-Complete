@@ -1,0 +1,13 @@
+.text{
+    appearance: none;
+    border: none;
+    background: none;
+
+}
+
+.text:focus{
+    appearance: none;
+    border: none;
+    background: none;
+    all: unset;
+}
