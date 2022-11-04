@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    background-color: #444241;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #585756;
+    color: white;
+    padding: 5px;
+}
+
+.name{
+    margin-left: 10px;
+}
+
+.icon {
+    padding-right: 5px;
+}
+
+.icon img {
+    width: 35px;
+}
+
+.icon a {
+    all: unset;
+}
+
+
+
 .text{
     appearance: none;
     border: none;
@@ -10,4 +49,77 @@
     border: none;
     background: none;
     all: unset;
+}
+
+#new-task-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#new-task-input{
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+    margin-top: 50px;
+    padding-left: 10px;
+}
+
+#new-task-submit{
+    display: flex;
+    margin-left: 20px;
+    background-color: #e5e0e0;
+    margin-top: 50px;
+    border: none;
+    font-size: 20px;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    height: 6.4vh;
+    width: 2.5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#new-task-submit:active {
+    background-color: #fff;
+    color: #000;
+}
+
+.task{
+    background-color: #e5e0e0;
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px white;
+    max-width: 90vh;
+}
+
+.align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    word-break: break-all;
+    white-space: normal;
+}
+
+.delete{
+    all: unset;
+    margin-top: 2px;
+    background-color:#444241;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,24 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <header>
-        <div id="nav" >
-            <h1 id="name">JS-Task</h1>
+    <div class="nav">
+        <div class="name">
+            JS-Task
         </div>
-        <form id="new-task-form">
-            
-            <input
-            type="text"
-            name="new-task-input"
-            id="new-task-input"
-                placeholder="Add a Task..."
-                />
-                <input 
-                type="submit"
-                id="new-task-submit"
-                value="+"
-            />
-        </form>
-    </header>
+        <div class="icon align">
+            <a href="#" id="profile_trigger"><img src="pfp.png" alt="Ok"></a>
+        </div>
+    </div>
+    
+    <form id="new-task-form">
+        <input type="text" name="new-task-input" id="new-task-input" placeholder="Add a Task..." />
+        <input type="submit" id="new-task-submit" value="+" />
+    </form>
     
     <main>
-        <section>
+        <section class="align">
             <div id="tasks">
                 <!-- <div class="task">
                     <div class="content">
@@ -42,7 +37,6 @@
                         readonly>
                     </div>
                     <div class="actions">
-                        <button class="edit">Edit</button>
                         <button class="delete">Delete</button>
                     </div>
 				</div> -->
@@ -50,7 +44,8 @@
             </div>
         </section>
     </main>
-    
+
     <script src="app.js"></script>
 </body>
+
 </html>
